@@ -1,0 +1,181 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Documentazione - Word Counter App</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				line-height: 1.6;
+				margin: 20px;
+				background-color: #f4f4f4;
+				color: #333;
+			}
+			h1,
+			h2,
+			h3 {
+				color: #333;
+			}
+			code,
+			pre {
+				background-color: #eaeaea;
+				padding: 10px;
+				border-radius: 5px;
+				display: block;
+			}
+			.notice {
+				padding: 15px;
+				border-left: 5px solid #2196f3;
+				background-color: #e7f3fe;
+				margin-bottom: 20px;
+			}
+			.notice.primary {
+				border-color: #2196f3;
+			}
+			.notice.success {
+				border-color: #4caf50;
+			}
+			.notice.warning {
+				border-color: #ff9800;
+			}
+			.notice.danger {
+				border-color: #f44336;
+			}
+			.parameter-table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-bottom: 20px;
+			}
+			.parameter-table th,
+			.parameter-table td {
+				border: 1px solid #ddd;
+				padding: 8px;
+			}
+			.parameter-table th {
+				background-color: #f2f2f2;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Word Counter App</h1>
+		<div class="notice primary">
+			<strong>Informazione:</strong> Word Counter App è un'applicazione che
+			permette di analizzare testi e file per contare il numero totale di
+			parole, lettere, spazi e identificare parole ripetute.
+		</div>
+
+		<h2>Descrizione del Progetto</h2>
+		<p>
+			Word Counter App è un'applicazione sviluppata per fornire un'analisi
+			dettagliata di testi e file di testo. L'applicazione conta il numero di
+			parole, lettere, spazi e identifica le parole ripetute in un dato input. È
+			utile per analisi linguistiche, statistiche di testo e varie altre
+			applicazioni dove è necessario un conteggio preciso degli elementi di un
+			testo.
+		</p>
+
+		<h2>Tecnologie Utilizzate</h2>
+		<ul>
+			<li>
+				<strong>Node.js</strong>: Un runtime JavaScript asincrono e basato su
+				eventi, progettato per creare applicazioni di rete scalabili. Utilizzato
+				per eseguire il backend dell'applicazione.
+			</li>
+			<li>
+				<strong>TypeScript</strong>: Un superset di JavaScript che aggiunge
+				tipizzazione statica e altre funzionalità avanzate. Utilizzato per
+				garantire un codice più robusto e manutenibile.
+			</li>
+			<li>
+				<strong>Jest</strong>: Un framework di testing JavaScript. Utilizzato
+				per scrivere e eseguire test automatici, garantendo che il codice
+				funzioni correttamente e che le modifiche non introducano regressioni.
+			</li>
+			<li>
+				<strong>npm (Node Package Manager)</strong>: Gestore di pacchetti per
+				Node.js. Utilizzato per gestire le dipendenze del progetto.
+			</li>
+			<li>
+				<strong>fs (File System)</strong>: Modulo nativo di Node.js utilizzato
+				per operazioni di lettura e scrittura di file.
+			</li>
+			<li>
+				<strong>Docker</strong>: Utilizzato per creare un ambiente di sviluppo e
+				produzione isolato. Docker consente di eseguire l'applicazione in un
+				container, assicurando che funzioni nello stesso modo su qualsiasi
+				macchina.
+			</li>
+		</ul>
+
+		<h2>Requisiti</h2>
+		<ul>
+			<li>Node.js</li>
+			<li>npm (Node Package Manager)</li>
+			<li>Docker</li>
+		</ul>
+
+		<h2>Installazione e Avvio del Progetto</h2>
+		<h3>Installazione Locale</h3>
+		<ol>
+			<li>Scarica o clona il repository del progetto.</li>
+			<li>
+				Installa le dipendenze:
+				<pre><code>npm install</code></pre>
+			</li>
+			<li>
+				Avvia l'applicazione:
+				<pre><code>npm start</code></pre>
+			</li>
+		</ol>
+
+		<h3>Utilizzo di Docker</h3>
+		<ol>
+			<li>
+				Costruisci l'immagine Docker:
+				<pre><code>docker build -t word-counter-app .</code></pre>
+			</li>
+			<li>
+				Esegui il container Docker:
+				<pre><code>docker run -d -p 3000:3000 word-counter-app</code></pre>
+			</li>
+		</ol>
+
+		<h2>Utilizzo dell'Applicazione</h2>
+		<h3>Analisi di un Testo</h3>
+		<p>
+			Per analizzare un testo, puoi utilizzare la funzione
+			<code>analyzeText</code>.
+		</p>
+		<h4>Esempio</h4>
+		<pre><code>import { analyzeText } from './src/analyzeText';
+
+const text = 'hello world hello';
+const result = analyzeText(text);
+console.log(result);</code></pre>
+
+		<h3>Analisi di un File</h3>
+		<p>
+			Per analizzare un file, puoi utilizzare la funzione
+			<code>analyzeFile</code>.
+		</p>
+		<h4>Esempio</h4>
+		<pre><code>import { analyzeFile } from './src/analyzeFile';
+
+const filePath = './path/to/your/test/file.txt';
+analyzeFile(filePath).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.error('Error analyzing file:', error);
+});</code></pre>
+
+		<h2>Test</h2>
+		<p>
+			Per eseguire i test automatici, puoi utilizzare il comando
+			<code>npm test</code>. Questo comando eseguirà i test definiti nella
+			directory <code>tests</code> utilizzando il framework <code>Jest</code>.
+		</p>
+	</body>
+</html>
